@@ -18,6 +18,7 @@ class PlayersController < ApplicationController
     else
       flash.now[:alert] = "Couldn't save"
       render :new
+    end
   end
 
   def show
@@ -31,6 +32,7 @@ class PlayersController < ApplicationController
     else
       flash.now[:alert]="Couldn't update."
       render :edit
+    end
   end
 
   def view
