@@ -3,10 +3,6 @@ class PlayersController < ApplicationController
     @players = Player.all
   end
 
-  def edit
-    @player = Player.find(params[:id])
-  end
-
   def new
     @player = Player.new
   end
@@ -35,7 +31,7 @@ class PlayersController < ApplicationController
     end
   end
 
-  def view
+  def edit
     @player = Player.find(params[:id])
   end
 
