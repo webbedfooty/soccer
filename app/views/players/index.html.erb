@@ -1,2 +1,22 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+<h1>Players index</h1>
+
+<div>
+			<h5>You have <%= Player.count %> players on your team</h5>
+</div>
+
+<div>
+	<% if flash[:notice] %>
+	  <div class="flash notice row">
+	    <p><%= flash[:notice] %></p>
+	  </div>
+	<% end %>
+</div>
+
+<div class="container">
+
+  <% if @players.any? %>
+    <% @players.each do |p| %>
+      <p>Name: <%= p.name %>  <br>Email:  <%= p.email %></p>
+    <% end %>
+  <% end %>
+</div>

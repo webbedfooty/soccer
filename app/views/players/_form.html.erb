@@ -1,39 +1,32 @@
 <%= form_for @player do |p| %>
 
-
+<div>
 <% if p.object.errors.any?%>
-  <div class="col xs12 s12">
     <% p.object.errors.full_messages.each do |x|%>
       <li>Error: <%= x %></li>
-      <li>Player info was not saved</li>
     <% end %>
-  </div>
+      <li>Player info was not saved</li>
   <% end %>
+  </div>
 
-  <div class="input-field col xs12 sr12 m12">
-    <div class="active">
+  <div>
+    <div>
       <%= p.label :name %>
     </div>
-    <div class="validate">
+    <div>
       <%= p.text_field :name %>
     </div>
   </div>
 
-  <div class="input-field col xs12 sr12 m12">
-    <div class="active">
+  <div>
+    <div>
       <%= p.label :email %>
     </div>
-    <div class="validate">
+    <div>
       <%= p.text_field :email %>
     </div>
   </div>
 
-
-
-
-  <div class="col sm12 ">
-    <span class="waves-effect right waves-light newPackBtn btn  blue darken-3">
+  <div>
       <%= p.submit %>
-    </span>
   </div>
-<% end %>
