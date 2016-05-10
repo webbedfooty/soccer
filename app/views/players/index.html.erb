@@ -16,7 +16,7 @@
 
   <% if @players.any? %>
     <% @players.each do |p| %>
-      <p>Name: <%= p.name %>  <br>Email:  <%= p.email %></p>
+      <p>Name: <%= link_to p.name, player_path(p) %>  <br>Email:  <%= p.email %></p>
     <% end %>
   <% end %>
 </div>
