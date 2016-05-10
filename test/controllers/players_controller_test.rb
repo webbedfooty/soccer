@@ -8,7 +8,7 @@ class PlayersControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    post :create, player: {name: "Sam Hain", email: "filler.hey"}
+    post :create, player: {'id' => players(:one).id}
     assert_redirected_to players_path
   end
 
