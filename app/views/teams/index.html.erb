@@ -1,0 +1,22 @@
+<h1>Teams index</h1>
+
+<div>
+			<h5>You have <%= Team.count %> teams in your league</h5>
+</div>
+
+<div>
+	<% if flash[:notice] %>
+	  <div class="flash notice row">
+	    <p><%= flash[:notice] %></p>
+	  </div>
+	<% end %>
+</div>
+
+<div class="container">
+
+  <% if @teams.any? %>
+    <% @teams.each do |t| %>
+      <p>Name: <%= link_to t.name, team_path(t) %></p>
+    <% end %>
+  <% end %>
+</div>
