@@ -10,7 +10,7 @@ class PlayerTest < ActiveSupport::TestCase
   test "test is not valid with non-unique name" do
     	@player = players(:one)
       assert(@player.valid?, "This should be valid under normal circcumstances")
-      p = Player.new(name: "Sam Hain", email: "filler.hey")
+      p = @player.dup
       refute(p.valid?)
   end
 

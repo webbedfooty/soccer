@@ -8,8 +8,8 @@ class PlayersControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    post :create!, player: {name: "Sam Hain", email: "filler.hey"}
-    assert_redirected_to players_index_path
+    post :create, player: {name: "Sam Hain", email: "fill.hey"}
+    assert_redirected_to players_path
   end
 
   test "should get new" do
