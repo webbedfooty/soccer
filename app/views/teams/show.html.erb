@@ -1,6 +1,6 @@
 <h1>Teams show</h1>
 
-<h1><%= @Team.name %></h1>
+<h1><%= @team.name %></h1>
 
 <% if flash[:notice] %>
   <div class="flash notice">
@@ -8,7 +8,7 @@
   </div>
 <% end %>
 
-<h2>GO <%= @Team.name %>!!</h2>
+<h2>GO <%= @team.name %>!!</h2>
 
 <p><%= link_to "Edit Team", edit_team_path(@team) %></p>
 <p><%= link_to "All Teams", :teams %></p>
