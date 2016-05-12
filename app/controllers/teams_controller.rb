@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     if @team.save
-      redirect_to :teams, notice: "Success"
+      redirect_to :teams, notice: "Success!"
     else
       flash.now[:alert] = "Couldn't save"
       render :new

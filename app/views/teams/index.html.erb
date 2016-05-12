@@ -1,7 +1,6 @@
-<h1>Teams index</h1>
 
 <div>
-			<h5>You have <%= Team.count %> teams in your league</h5>
+			<h2> There are <%= Team.count %> teams in the league.</h2>
 </div>
 
 <div>
@@ -20,3 +19,6 @@
     <% end %>
   <% end %>
 </div>
+
+<p><%= link_to "Add Team", new_team_path %></p>
+<p><%= link_to "All Players", :players %></p>

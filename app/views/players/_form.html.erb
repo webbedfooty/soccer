@@ -19,24 +19,28 @@
   </div>
 
   <div>
-    <div>
-      <%= p.label :team %>
-    </div>
-    <div>
-      <%= p.text_field :team %>
-    </div>
+    <br>
+    <%= p.label :team %>
+      <div class="input-field">
+        <select class="icons" id="team" name="team_id">
+          <% teams_array = Team.all.map { |team| [team.name, team.id] } %>
+          <%= options_for_select(teams_array) %>
+        </select>
+      </div>
   </div>
 
   <div>
-    <div>
-      <%= p.label :email %>
-    </div>
-    <div>
-      <%= p.text_field :email %>
-    </div>
+    <br>
+      <div>
+        <%= p.label :email %>
+      </div>
+      <div>
+        <%= p.text_field :email %>
+      </div>
   </div>
 
   <div>
+    <br>
       <%= p.submit %>
   </div>
   <% end %>
