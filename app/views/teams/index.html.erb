@@ -1,6 +1,6 @@
 
 <div>
-			<h2> There are <%= Team.count %> teams in the league.</h2>
+			<h2>There are <%= Team.count %> teams in the league.</h2>
 </div>
 
 <div>
@@ -15,7 +15,9 @@
 
   <% if @teams.any? %>
     <% @teams.each do |t| %>
-      <p>Name: <%= link_to t.name, team_path(t) %></p>
+      <li class="block">
+        <p>Name: <%= link_to t.name, team_path(t) %></p>
+      </li>
     <% end %>
   <% end %>
 </div>

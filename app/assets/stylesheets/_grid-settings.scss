@@ -1,0 +1,41 @@
+@import "bourbon/bourbon"; // or "bourbon" when in Rails
+@import "neat/neat-helpers"; // or "neat-helpers" when in Rails
+
+// Change the grid settings
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 10;
+$max-width: 1200px;
+
+// Define your breakpoints
+$tablet: new-breakpoint(max-width 768px 8);
+$mobile: new-breakpoint(max-width 480px 4);
+
+div.container {
+  @include outer-container;
+}
+
+li.block {
+  @include outer-container;
+  @include span-columns(3);
+  @include omega(4n);
+}
+
+.my-class {
+  @include media($mobile) { // As defined in _grid-settings.scss
+    @include span-columns(2);
+  }
+}
+
+// Compiled CSS
+@media screen and (max-width: 480px) {
+  .my-class {
+    display: block;
+    float: left;
+    margin-right: 7.42297%;
+    width: 46.28851%; // 2 columns of the total 4 in this media context
+  }
+  .my-class:last-child {
+    margin-right: 0;
+  }
+}

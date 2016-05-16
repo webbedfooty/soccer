@@ -1,8 +1,8 @@
-<%= form_for @team do |t| %>
+<%= form_for @team do |f| %>
 
 <div>
-<% if t.object.errors.any?%>
-    <% t.object.errors.full_messages.each do |x|%>
+<% if f.object.errors.any?%>
+    <% f.object.errors.full_messages.each do |x|%>
       <li>Error: <%= x %></li>
     <% end %>
       <li>Team info was not saved</li>
@@ -11,15 +11,15 @@
 
   <div>
     <div>
-      <%= t.label :name %>
+      <%= f.label :name %>
     </div>
     <div>
-      <%= t.text_field :name %>
+      <%= f.text_field :name %>
     </div>
   </div>
 
 
   <div>
-      <%= t.submit %>
+      <%= f.submit %>
   </div>
   <% end %>
