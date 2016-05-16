@@ -24,7 +24,6 @@ class PlayersController < ApplicationController
   end
 
   def update
-          (byebug)
     @player = Player.find(params[:id])
     if @player.update_attributes(player_params)
       redirect_to player_path(@player), notice: "Successfully Updated!!!!"
@@ -46,6 +45,6 @@ class PlayersController < ApplicationController
 
   private
   def player_params
-        params.require(:player).permit(:name, :team, :email)
+        params.require(:player).permit(:name, :team_id, :email)
   end
 end
